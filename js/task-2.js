@@ -5,5 +5,19 @@
 // Виведіть в alert відповідне повідомлення, наприклад:
 // "10 входить в першу чверть"
 
-// const min = Math.floor(Math.random() * (59 - 0) + 0);
-
+const min = Math.floor(Math.random() * (59 - 0) + 0);
+if (min >= 0 && min <= 15) {
+    alert(`${min} входить в першу чверть`);
+}
+else if (min >= 16 && min <= 30) {
+    alert(`${min} входить в другу чверть`);
+}
+else if (min >= 31 && min <= 45) {
+    alert(`${min} входить в третю чверть`);
+}
+else if (min >= 46 && min <= 59) {
+    alert(`${min} входить в четверту чверть`);
+}
+else { 
+    alert("Невірне значення хвилини");
+}
