@@ -5,14 +5,16 @@
 // якщо ділиться  без остачі на 5 - виводить в консоль 'buzz',
 // якщо ділиться  без остачі і на 3, і на 5 - виводить в консоль 'fizzbuzz'.
 
-function fizzBuzz(num) {
-    for (let i = 1; i <= num; i++) {
-        if (i % 3 === 0 && i % 5 === 0) {
-            console.log('fizzbuzz');
-        } else if (i % 3 === 0) {
-            console.log('fizz');
-        } else if (i % 5 === 0) {
-            console.log('buzz');
+function fizzBuzz(num) { // num - це число, до якого потрібно перевірити оголошення функції
+    for (let i = 1; i <= num; i++) { // Цикл від 1 до num
+        if (i % 3 === 0 && i % 5 === 0) { // Перевірка на ділення на 3 і 5 без остачі
+            console.log('fizzbuzz'); // Якщо так, виводимо 'fizzbuzz'
+        } else if (i % 3 === 0) { // Перевірка на ділення на 3 без остачі
+            console.log('fizz'); // Якщо так, виводимо 'fizz'
+        } else if (i % 5 === 0) {  // Перевірка на ділення на 5 без остачі
+            console.log('buzz'); // Якщо так, виводимо 'buzz'
         }
     }
 }
+fizzBuzz(15); // Виведе 'fizz', 'buzz', 'fizz', 'fizz', 'buzz', 'fizz', 'fizzbuzz' для чисел від 1 до 15
+// Виведе 'fizz', 'buzz', 'fizz', 'fizz',
