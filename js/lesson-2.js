@@ -20,6 +20,7 @@
 // logItems(styles);
 // console.log(styles);
 
+// ----------------------------------------------------------------------
 // Завдання 2:
 // Напишіть функцію checkLogin(array), яка:
 // Приймає масив логінів як аргумент.
@@ -40,6 +41,7 @@
 // }
 // checkLogin(logins);
 
+// ----------------------------------------------------------------------
 // Завдання 3:
 // Напишіть функцію caclculateAverage(),
 // яка приймає довільну кількість
@@ -61,6 +63,8 @@
 //     console.log(calculateAverage(1, 2, 3, 4, 5)); // 3
 //     console.log(calculateAverage(10, 20, '30')); // 20
 
+
+// ----------------------------------------------------------------------
 // Завдання 4:
 // Напишіть функцію, яка сумуватиме сусідні числа
 // і пушитиме їх в новий масив.
@@ -80,6 +84,7 @@
 // }
 // console.log(someArr([22, 11, 34, 5, 12, 13, 14, 15])); // [33, 45, 39, 17, 25, 27, 29]
 
+// ----------------------------------------------------------------------
 // Завдання 5:
 // Напишіть функцію findSmallestNumber(numbers),
 // яка шукає найменше число в масиві.
@@ -96,7 +101,7 @@
 // }
 // console.log(findSmallestNumber(numbers)); // 2
 
-
+//-----------------------------------------------------------------------
 // Завдання 6:
 // Напишіть функцію findLongestWord(string), яка
 // приймає довільний рядок, що складається лише зі слів, розділених
@@ -117,6 +122,7 @@
 // }
 // console.log(findLongestWord("London is the capital of Great Britain")); // 'capital'
 
+// ----------------------------------------------------------------------
 // Завдання 7:
 // Напишіть скрипт, який для об'єкту user, послідовно:
 // 1 - додасть поле mood зі значенням 'happy',
@@ -125,16 +131,38 @@
 // 4 - виведе зміст об'єкта user у форматі
 // '<ключ>:<значення>' використовуя Object.keys() та for...of
 
-const user = {
-    name: "John",
-    age: 20,
-    hobby: "tenis",
-    premium: true,
-};
-user.mood = 'happy';
-user.hobby = 'skydiving';
-user.premium = false;
+// const user = {
+//     name: "John",
+//     age: 20,
+//     hobby: "tenis",
+//     premium: true,
+// };
+// user.mood = 'happy';
+// user.hobby = 'skydiving';
+// user.premium = false;
 
-for (const key of Object.keys(user)) {
-    console.log(`${key}: ${user[key]}`);
-}   
+// for (const key of Object.keys(user)) {
+//     console.log(`${key}: ${user[key]}`);
+// }
+
+// ----------------------------------------------------------------------
+// Завдання 8:
+// Є об'єкт, в якому зберігаються зарплати команди
+// Напишіть код для додавання усіх зарплат та
+// збережіть його результат в змінній sum.
+// Якщо об'єкт salaries пустий, то результат має бути 0
+
+const salaries = {
+    Mango: 100,
+    Poly: 160,
+    Ajax: 1470,
+};
+
+let sum = 0;
+for (const salary of Object.values(salaries)) {
+    sum += salary;
+}
+if (Object.keys(salaries).length === 0) {
+    sum = 0;
+}
+console.log(sum); // 1730
