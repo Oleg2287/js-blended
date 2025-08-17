@@ -199,15 +199,212 @@
  // Приклад використання:
 
 // const calc = new Calculator();
+// class Calculator {
+//   constructor() {
+//     this.result = 0;
+//   }
 
+//   number(value) {
+//     this.result = value;
+//     return this;
+//   }
 
+//   add(value) {
+//     this.result += value;
+//     return this;
+//   }
+
+//   subtract(value) {
+//     this.result -= value;
+//     return this;
+//   }
+
+//   multiply(value) {
+//     this.result *= value;
+//     return this;
+//   }
+
+//   divide(value) {
+//     if (value === 0) {
+//       throw new Error("Cannot divide by zero");
+//     }
+//     this.result /= value;
+//     return this;
+//   }
+
+//   getResult() {
+//     return this.result;
+//   }
+// }
 // const result = calc
-//    .number(10)   // Встановлюємо початкове значення 10
-//    .add(5)       // Додаємо 5 (10 + 5 = 15)
-//    .subtract(3)  // Віднімаємо 3 (15 - 3 = 12)
-//    .multiply(4)  // Множимо на 4 (12 * 4 = 48)
-//    .divide(2)    // Ділимо на 2 (48 / 2 = 24)
-//    .getResult(); // Отримуємо результат: 24
-
+// .number(10)   // Встановлюємо початкове значення 10
+// .add(5)       // Додаємо 5 (10 + 5 = 15)
+// .subtract(3)  // Віднімаємо 3 (15 - 3 = 12)
+// .multiply(4)  // Множимо на 4 (12 * 4 = 48)
+// .divide(2)    // Ділимо на 2 (48 / 2 = 24)
+// .getResult(); // Отримуємо результат: 24
 
 // console.log(result); // 24
+
+// виправлене
+// class Calculator {
+//   constructor() {
+//     this.result = 0;
+//   }
+
+//   number(value) {
+//     this.result = value;
+//     return this;
+//   }
+
+//   add(number) {
+//     this.result += number;
+//     return this;
+//   }
+//   subtract(number) {
+//     this.result -= number;
+//     return this;
+//   }
+// divide(number) {
+//     if (this.result === 0) {
+//       return "I can not divide to 0";
+//     }
+//     this.result /= number;
+//     return this;
+//   }
+
+//   multiply(number) {
+//     this.result *= number;
+//     return this;
+//   }
+//   getResult() {
+//     return this.result;
+//   }
+// }
+// const number = new Calculator();
+
+// const result = number
+//   .number(10) // Встановлюємо початкове значення 10
+//   .add(5) // Додаємо 5 (10 + 5 = 15)
+//   .subtract(3) // Віднімаємо 3 (15 - 3 = 12)
+//   .multiply(4) // Множимо на 4 (12 * 4 = 48)
+//   .divide(2) // Ділимо на 2 (48 / 2 = 24)
+//   .getResult(); // Отримуємо результат: 24
+
+// console.log(result); // 24
+
+// --------------------------------------------------
+
+// Задача this
+//Напиши клас Rectangle який створює об'єкт
+//з ​​властивостями height, width
+//і методом calculateArea() для підрахунку прлощі прямокутника.
+
+// class Rectangle {
+//   constructor(height, width) {
+//     this.height = height;
+//     this.width = width;
+//   }
+
+//   calculateArea() {
+//     return this.height * this.width;
+//   }
+// }
+// const rectangle1 = new Rectangle(10, 5);
+// console.log(rectangle1.calculateArea()); // 50 
+
+// --------------------------------------------------
+
+
+// Завдання 12:
+ // Напиши клас Client який створює об'єкт з властивостями login email.
+ // Оголоси приватні властивості #login #email, доступ до яких зроби 
+ // через геттер та сеттер login email
+
+// class Client {
+//   #login;
+//   #email;
+
+//   constructor(login, email) {
+//     this.#login = login;
+//     this.#email = email;
+//   }
+
+//   get login() {
+//     return this.#login;
+//   }
+
+//   set login(newLogin) {
+//     this.#login = newLogin;
+//   }
+
+//   get email() {
+//     return this.#email;
+//   }
+
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
+
+// const newclient = new Client("user123", "user@example.com");
+// console.log(newclient.login); // user123
+// newclient.login = "newUser456";
+// console.log(newclient.email); // user@example.com
+// newclient.email = "newUser456@example.com";
+// console.log(newclient.login); // newUser456
+// console.log(newclient.email); // newUser456@example.com
+
+// ---------------------------------------------
+
+// Задача 13
+  //  Наслідування у класах!
+  // Cтворіть клас `Person`, який містить наступні властивості:
+  //  - `name` - ім'я людини;
+  //  - `age`- вік людини;
+  //  - `gender` - стать людини;
+  //  - `email`- електронна пошта людини.
+  
+  // Крім того, клас `Person` має мати метод `getDetails()`,
+  // який повертає об'єкт з ім'ям, віком, статтю 
+  //та електронною поштою людини.
+  
+  // 
+  // Потім Створіть клас `Employee`, який розширює клас `Person` і містить наступні властивості:
+  //  - salary - зарплата співробітника;
+  //  - department - відділ, в якому працює співробітник.
+  // Крім того, клас `Employee` має мати метод `getEmployeeDetails()`, який повертає об'єкт з зарплатою співробітника та відділом, в якому він працює.
+
+class Person {
+  constructor(name, age, gender, email) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.email = email;
+  }
+
+  getDetails() {
+    return {
+      name: this.name,
+      age: this.age,
+      gender: this.gender,
+      email: this.email
+    };
+  }
+}
+
+class Employee extends Person {
+  constructor(name, age, gender, email, salary, department) {
+    super(name, age, gender, email);
+    this.salary = salary;
+    this.department = department;
+  }
+
+  getEmployeeDetails() {
+    return {
+      ...this.getDetails(),
+      salary: this.salary,
+      department: this.department
+    };
+  }
+}
