@@ -124,20 +124,55 @@
 // Задача 10а
 // маємо масив об'єктів, який представляє список товарів і їх цін:
 // Завдання: Знайдіть суму вартості всіх товарів, які коштують більше 10 гривень.
-const products = [
-  { name: 'Milk', price: 20 },
-  { name: 'Bread', price: 10 },
-  { name: 'Eggs', price: 15 },
-];
-const total = products
-  .filter((product) => product.price > 10)
-  .reduce((acc, product) => acc + product.price, 0);
-console.log(total);
+// const products = [
+//   { name: 'Milk', price: 20 },
+//   { name: 'Bread', price: 10 },
+//   { name: 'Eggs', price: 15 },
+// ];
+// const total = products
+//   .filter((product) => product.price > 10)
+//   .reduce((acc, product) => acc + product.price, 0);
+// console.log(total);
 
+// -----------------------------------------------
+
+// Задача 10б
+// Напишіть функцію getGirlsPassports() яка поверне масив номерів паспортів дівчат.
+// const friends = [
+//     { passport: '03005988', name: 'Joseph Francis Tribbiani Jr', age: 32, sex: 'm' },
+//     { passport: '03005989', name: 'Chandler Muriel Bing', age: 33, sex: 'm' },
+//     { passport: '03005990', name: 'Ross Eustace Geller', age: 33, sex: 'm' },
+//     { passport: '03005991', name: 'Rachel Karen Green', age: 31, sex: 'f' },
+//     { passport: '03005992', name: 'Monica Geller', age: 31, sex: 'f' },
+//     { passport: '03005993', name: 'Phoebe Buffay', age: 34, sex: 'f' }
+// ]
+// function getGirlsPassports(friends) {
+//     return friends
+//         .filter(friend => friend.sex === 'f')
+//         .map(girl => girl.passport);
+// }
+// console.log(getGirlsPassports(friends)); // ['03005991', '03005992', '03005993']
+
+// ----------------------------------------------------------------
+    
+// Задача 10в
+// Маємо масив об'єктів, який представляє список замовлень:
+// Завдання:  Поверніть список товарів з усіх виконаних замовлень.
+// const orders = [
+//   { id: 1, products: ['Milk', 'Bread'], status: 'completed' },
+//   { id: 2, products: ['Eggs', 'Juice'], status: 'processing' },
+//   { id: 3, products: ['Pasta', 'Spices'], status: 'completed' },
+// ];
+// const completedProducts = orders
+//   .filter(order => order.status === 'completed')
+//   .flatMap(order => order.products);
+// console.log(completedProducts); // ['Milk', 'Bread', 'Pasta', 'Spices']
+
+// -----------------------------------------------------------
 
 // Задача 11
 // Розроби клас Calculator, який дозволяє виконувати арифметичні 
- //  операції над числом за допомогою методів класу, підтримуючи  
+ // операції над числом за допомогою методів класу, підтримуючи  
  // ланцюжковий виклик (method chaining).
  //
  // Вимоги до класу Calculator
